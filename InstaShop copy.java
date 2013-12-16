@@ -28,8 +28,8 @@ import javax.swing.JPanel;
 public class InstaShop extends JFrame {
 	
 	// Initializes variables, buttons, JPanel, JFrame, and JLabel
-	static String filename; 
-	boolean sepia; 
+    static String filename; 
+    boolean sepia; 
     boolean blush;
     boolean bw; 
     boolean frost;
@@ -39,11 +39,11 @@ public class InstaShop extends JFrame {
     boolean morning; 
     static boolean isNewImage = false; 
     ImageIcon imageFinal;
-	ImageIcon editedImage;
-	BufferedImage bufferedImageOriginal;
-	JPanel buttonPanel = new JPanel(); 
-	JFrame window = new JFrame(); 
-	JLabel label;
+    ImageIcon editedImage;
+    BufferedImage bufferedImageOriginal;
+    JPanel buttonPanel = new JPanel(); 
+    JFrame window = new JFrame(); 
+    JLabel label;
     JButton sepiaButton = new JButton("Sepia");
     JButton blushButton = new JButton("Blush");
     JButton bwButton = new JButton("Noir");
@@ -77,7 +77,7 @@ public class InstaShop extends JFrame {
         final ImageIcon image = new ImageIcon(fileLocation);
         // Get BufferedImage from file location
         try {
-			bufferedImageOriginal = ImageIO.read(new File(fileLocation));
+		bufferedImageOriginal = ImageIO.read(new File(fileLocation));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -500,13 +500,13 @@ public class InstaShop extends JFrame {
 	
 	// Exports image as .jpg
 	public void exportImage(ImageIcon image){
-		Image img = image.getImage();
+	     Image img = image.getImage();
 		
-		// Created BufferedImage
-		BufferedImage bufferedImage = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_RGB);
+	     // Created BufferedImage
+	     BufferedImage bufferedImage = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_RGB);
 		
-		// Draw image onto this BufferedImage
-		Graphics2D graphic = bufferedImage.createGraphics();
+	     // Draw image onto this BufferedImage
+	    Graphics2D graphic = bufferedImage.createGraphics();
 	    graphic.drawImage(img, 0, 0, null);
 	    graphic.dispose();
 	    
