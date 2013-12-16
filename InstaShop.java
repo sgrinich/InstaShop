@@ -70,186 +70,186 @@ public class InstaShop extends JFrame {
 		randomButton.setForeground(Color.MAGENTA);
 		morningButton.setForeground(Color.GRAY);
 		
-        // Gets the file directory for image chosen from FileDialog
-        String fileLocation = getFileDirectory();
-        
-        // Get ImageIcon from file location
-        final ImageIcon image = new ImageIcon(fileLocation);
-        // Get BufferedImage from file location
-        try {
-		bufferedImageOriginal = ImageIO.read(new File(fileLocation));
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-        
-        // Draws initial image that's shown on startup, gets ImageIcon
-        imageFinal = drawImage(image);
-        
-        // Add buttons to JFrame
-        buttonPanel.add(originalButton);
-        buttonPanel.add(newImageButton);
-        buttonPanel.add(exportButton);
-        buttonPanel.add(sepiaButton);
-        buttonPanel.add(blushButton);
-        buttonPanel.add(solButton);
-        buttonPanel.add(bwButton);
-        buttonPanel.add(frostButton);
-        buttonPanel.add(midnightButton);
-        buttonPanel.add(morningButton);
-        buttonPanel.add(randomButton);
-        
-        // Set background color of buttonPanel
-        buttonPanel.setBackground(Color.GRAY);
-        
-        // Add buttonPanel to JFrame window
-        window.add(buttonPanel, BorderLayout.SOUTH);
-        
-		// Set up the frame window and its main content pane.
-        window.setSize(1200, 800);
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setVisible(true);
-        window.setLocationRelativeTo(null);
-        window.setTitle("InstaShop");
-        window.setResizable(false);
-        window.getContentPane().setBackground(Color.DARK_GRAY);
-                
-        // Listener for button to choose new image
-        newImageButton.addActionListener(new ActionListener() {     	 
-            public void actionPerformed(ActionEvent e)
-            {
-            	isNewImage = true; 
-            	String fileLocation = getFileDirectory();
-                
-                // Get ImageIcon from file location
-                final ImageIcon image = new ImageIcon(fileLocation);
-                // Get BufferedImage from file location
-                try {
-        			bufferedImageOriginal = ImageIO.read(new File(fileLocation));
-        		} catch (IOException e1) {
-        			e1.printStackTrace();
-        		}
-                
-                // Draws initial image that's shown on startup, gets ImageIcon
-                label.setIcon(null);
-                imageFinal = drawImage(image);
-                
-            }
-        });  
-         
-        // Listener for sepia button
-        sepiaButton.addActionListener(new ActionListener() {     	 
-            public void actionPerformed(ActionEvent e)
-            {
-            	sepia = true; 
-            	label.setIcon(null);
-            	drawImage(imageFinal);
-            	sepia = false; 
-            }
-        });  
-        
-        // Listener for blush button
-        blushButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e)
-            {
-            	blush = true; 
-            	label.setIcon(null);
-            	drawImage(imageFinal);
-            	blush = false; 
-            }
-        });  
-        
-        // Listener for sol button
-        solButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e)
-            {
-            	sol = true; 
-            	label.setIcon(null);
-            	drawImage(imageFinal);
-            	sol = false; 
-            }
-        });  
-        
-        // Listener for morning button
-        morningButton.addActionListener(new ActionListener() {       	 
-            public void actionPerformed(ActionEvent e)
-            {
-            	morning = true; 
-            	label.setIcon(null);
-            	drawImage(imageFinal);
-            	morning = false; 
-            }
-        }); 
-        
-        // Listener for black and white button
-        bwButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e)
-            {
-            	bw = true; 
-            	label.setIcon(null);
-            	drawImage(imageFinal);
-            	bw = false; 
-            }
-        }); 
-        
-        // Listener for frost button
-        frostButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e)
-            {
-            	frost = true; 
-            	label.setIcon(null);
-            	drawImage(imageFinal);
-            	frost = false; 
-            }
-        });
-        
-        // Listener for original button
-        originalButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e)
-            {
-            	label.setIcon(null);
-            	drawImage(imageFinal);
-            }
-        }); 
-        
-        // Listener for effect button
-        midnightButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e)
-            {	
-            	midnight = true; 
-            	label.setIcon(null);
-            	drawImage(imageFinal);
-            	midnight = false; 
-            }
-        }); 
-        
-        // Listener for random button
-        randomButton.addActionListener(new ActionListener() {
-        	 
-            public void actionPerformed(ActionEvent e)
-            {
-            	random = true; 
-            	label.setIcon(null);
-            	drawImage(imageFinal);
-            	random = false;
-
-            }
-        }); 
-        
-        // Listener for export button
-        exportButton.addActionListener(new ActionListener() {
-       	 
-            public void actionPerformed(ActionEvent e)
-            {
-                if(editedImage == null) {	
-                	exportImage(imageFinal);
-                }
-                
-                else {
-                	exportImage(editedImage);
-                }
-            }
-        });  
-        
+	        // Gets the file directory for image chosen from FileDialog
+	        String fileLocation = getFileDirectory();
+	        
+	        // Get ImageIcon from file location
+	        final ImageIcon image = new ImageIcon(fileLocation);
+	        // Get BufferedImage from file location
+	        try {
+			bufferedImageOriginal = ImageIO.read(new File(fileLocation));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+	        
+	        // Draws initial image that's shown on startup, gets ImageIcon
+	        imageFinal = drawImage(image);
+	        
+	        // Add buttons to JFrame
+	        buttonPanel.add(originalButton);
+	        buttonPanel.add(newImageButton);
+	        buttonPanel.add(exportButton);
+	        buttonPanel.add(sepiaButton);
+	        buttonPanel.add(blushButton);
+	        buttonPanel.add(solButton);
+	        buttonPanel.add(bwButton);
+	        buttonPanel.add(frostButton);
+	        buttonPanel.add(midnightButton);
+	        buttonPanel.add(morningButton);
+	        buttonPanel.add(randomButton);
+	        
+	        // Set background color of buttonPanel
+	        buttonPanel.setBackground(Color.GRAY);
+	        
+	        // Add buttonPanel to JFrame window
+	        window.add(buttonPanel, BorderLayout.SOUTH);
+	        
+			// Set up the frame window and its main content pane.
+	        window.setSize(1200, 800);
+	        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	        window.setVisible(true);
+	        window.setLocationRelativeTo(null);
+	        window.setTitle("InstaShop");
+	        window.setResizable(false);
+	        window.getContentPane().setBackground(Color.DARK_GRAY);
+	                
+	        // Listener for button to choose new image
+	        newImageButton.addActionListener(new ActionListener() {     	 
+	            public void actionPerformed(ActionEvent e)
+	            {
+	            	isNewImage = true; 
+	            	String fileLocation = getFileDirectory();
+	                
+	                // Get ImageIcon from file location
+	                final ImageIcon image = new ImageIcon(fileLocation);
+	                // Get BufferedImage from file location
+	                try {
+	        			bufferedImageOriginal = ImageIO.read(new File(fileLocation));
+	        		} catch (IOException e1) {
+	        			e1.printStackTrace();
+	        		}
+	                
+	                // Draws initial image that's shown on startup, gets ImageIcon
+	                label.setIcon(null);
+	                imageFinal = drawImage(image);
+	                
+	            }
+	        });  
+	         
+	        // Listener for sepia button
+	        sepiaButton.addActionListener(new ActionListener() {     	 
+	            public void actionPerformed(ActionEvent e)
+	            {
+	            	sepia = true; 
+	            	label.setIcon(null);
+	            	drawImage(imageFinal);
+	            	sepia = false; 
+	            }
+	        });  
+	        
+	        // Listener for blush button
+	        blushButton.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e)
+	            {
+	            	blush = true; 
+	            	label.setIcon(null);
+	            	drawImage(imageFinal);
+	            	blush = false; 
+	            }
+	        });  
+	        
+	        // Listener for sol button
+	        solButton.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e)
+	            {
+	            	sol = true; 
+	            	label.setIcon(null);
+	            	drawImage(imageFinal);
+	            	sol = false; 
+	            }
+	        });  
+	        
+	        // Listener for morning button
+	        morningButton.addActionListener(new ActionListener() {       	 
+	            public void actionPerformed(ActionEvent e)
+	            {
+	            	morning = true; 
+	            	label.setIcon(null);
+	            	drawImage(imageFinal);
+	            	morning = false; 
+	            }
+	        }); 
+	        
+	        // Listener for black and white button
+	        bwButton.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e)
+	            {
+	            	bw = true; 
+	            	label.setIcon(null);
+	            	drawImage(imageFinal);
+	            	bw = false; 
+	            }
+	        }); 
+	        
+	        // Listener for frost button
+	        frostButton.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e)
+	            {
+	            	frost = true; 
+	            	label.setIcon(null);
+	            	drawImage(imageFinal);
+	            	frost = false; 
+	            }
+	        });
+	        
+	        // Listener for original button
+	        originalButton.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e)
+	            {
+	            	label.setIcon(null);
+	            	drawImage(imageFinal);
+	            }
+	        }); 
+	        
+	        // Listener for effect button
+	        midnightButton.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e)
+	            {	
+	            	midnight = true; 
+	            	label.setIcon(null);
+	            	drawImage(imageFinal);
+	            	midnight = false; 
+	            }
+	        }); 
+	        
+	        // Listener for random button
+	        randomButton.addActionListener(new ActionListener() {
+	        	 
+	            public void actionPerformed(ActionEvent e)
+	            {
+	            	random = true; 
+	            	label.setIcon(null);
+	            	drawImage(imageFinal);
+	            	random = false;
+	
+	            }
+	        }); 
+	        
+	        // Listener for export button
+	        exportButton.addActionListener(new ActionListener() {
+	       	 
+	            public void actionPerformed(ActionEvent e)
+	            {
+	                if(editedImage == null) {	
+	                	exportImage(imageFinal);
+	                }
+	                
+	                else {
+	                	exportImage(editedImage);
+	                }
+	            }
+	        });  
+	        
 	}
 	
 	// Draws image, returns ImageIcon of the final scaled down image
